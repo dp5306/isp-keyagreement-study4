@@ -45,7 +45,7 @@ public class SignatureExample {
 
         // Finally, we load the document into the signature object and sign it
         signer.update(document.getBytes(StandardCharsets.UTF_8));
-        final byte[] signature = signer.sign();
+        final byte[] signature = signer.sign(); /// <--- Get signature here
         System.out.println("Signature: " + Agent.hex(signature));
 
         /*
@@ -63,7 +63,7 @@ public class SignatureExample {
         // Check whether the signature is valid
         verifier.update(document.getBytes(StandardCharsets.UTF_8));
 
-        if (verifier.verify(signature))
+        if (verifier.verify(signature))  /// <--- Chech signature here
             System.out.println("Valid signature.");
         else
             System.err.println("Invalid signature.");
